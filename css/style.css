@@ -1,0 +1,297 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: auto;
+}
+
+
+body {
+  font-family: sans-serif;
+  background: #f8f8f8;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ---------- NAV ---------- */
+nav {
+  background: #fff;
+  padding: 1em;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 1.5em;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+/* ---------- HEADER ---------- */
+header {
+  background: url('https://via.placeholder.com/1600x600?text=Construccion') center/cover no-repeat;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  padding: 2em;
+}
+
+header h1 {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+}
+
+header p {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+
+.logo {
+  width: 100px;
+  margin-bottom: 1em;
+}
+
+/* ---------- WHATSAPP BUTTON ---------- */
+.whatsapp-btn {
+  background: #25D366;
+  color: white;
+  text-decoration: none;
+  padding: 0.8em 1.5em;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-weight: bold;
+  margin-top: 1em;
+}
+
+.whatsapp-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+/* ---------- SECTIONS ---------- */
+section {
+  padding: 4em 2em;
+  max-width: 1000px;
+  margin: auto;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1em;
+  font-size: 2em;
+}
+
+/* ---------- PROJECTS ---------- */
+/*
+.projects,
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2em;
+}
+
+.projects img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+*/
+
+
+
+/* ---------- PROJECTS BAR ---------- */
+.project-slider {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  display: flex;
+  gap: 1em;
+  padding: 1em 0;
+}
+
+.project-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.slide-track {
+  display: flex;
+  gap: 1em;
+}
+
+.slide-track img {
+  width: 500px;
+  height: 425px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  scroll-snap-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+.slide-track img:hover {
+  transform: scale(1.03);
+}
+
+@media (min-width: 768px) {
+  .project-slider {
+    scrollbar-width: thin;        /* Firefox */
+  }
+
+  .project-slider::-webkit-scrollbar {
+    display: block;               /* Chrome/Safari */
+    height: 8px;
+  }
+
+  .project-slider::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+  }
+}
+
+.full-width {
+  width: 100%;
+  padding-left: 1em;
+  padding-right: 1em;
+  box-sizing: border-box;
+}
+
+
+
+/* ---------- SERVICES ---------- */
+/*
+.services div {
+  background: white;
+  padding: 1.5em;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+*/
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5em;
+  margin-top: 2em;
+}
+
+.services div {
+  background: white;
+  padding: 1.5em;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.services div:hover {
+  transform: translateY(-5px);
+}
+
+
+
+/* ---------- FORM ---------- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  background: white;
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+form input,
+form textarea {
+  padding: 0.8em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  padding: 1em;
+  background: #444;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 2em;
+}
+
+footer .social {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  flex-wrap: wrap;
+}
+
+footer .social img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.2em;
+  }
+
+  header p {
+    font-size: 1em;
+  }
+
+  .projects,
+  .services {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo {
+    width: 80px;
+  }
+
+  .whatsapp-btn {
+    font-size: 0.9em;
+    padding: 0.7em 1em;
+  }
+
+  form {
+    padding: 1.5em;
+  }
+
+  footer .social img {
+    width: 20px;
+    height: 20px;
+  }
+}
